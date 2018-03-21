@@ -1,7 +1,5 @@
-// String to width(px)
-
-$.fn.textWidth = function(text, font) {
-    if (!$.fn.textWidth.fakeEl) $.fn.textWidth.fakeEl = $('<span>').hide().appendTo(document.body);
-    $.fn.textWidth.fakeEl.text(text || this.val() || this.text()).css('font', font || this.css('font'));
-    return $.fn.textWidth.fakeEl.width();
-};
+#Get the yesterdayDate
+function getYesterdaysDate(date) {
+    var yesterday = new Date((new Date(date)).valueOf() - 1000*60*60*24);
+    return yesterday.getFullYear()  + '-' + (yesterday.getMonth()+1) + '-' + yesterday.getDate();
+}
